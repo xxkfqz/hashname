@@ -104,7 +104,7 @@ fn is_already_processed(filename: &String) -> bool {
     filename.len() == 64
         && filename
             .chars()
-            .all(|c| c.is_ascii_digit() || (c.is_ascii_alphabetic() && c.is_ascii_lowercase()))
+            .all(|c| c.is_ascii_digit() || (c.is_ascii_hexdigit() && c.is_ascii_lowercase()))
 }
 
 fn is_already_exists(filename: &String) -> bool {
