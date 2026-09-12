@@ -1,0 +1,56 @@
+.TH "HASHNAME" "1" "2026\-09\-12" "hashname 1.0.1" "Hashname Manual"
+.SH NAME
+hashname \(em utility for renaming files to their SHA256 hash.
+.SH SYNOPSIS
+\f[CR]hashname [OPTION...] [FILES...]\f[R]
+.SH DESCRIPTION
+hashname can be used to rename files based on the hash of their contents.
+This is primarily used when you have a directory containing many files without a naming scheme (for example, a directory of cat pictures downloaded from various sites).
+.PP
+The utility uses multithreading to process files.
+This is especially noticeable if files are stored in cache, on a RAM disk, or on fast NVMe drives.
+.PP
+hashname does not move files, only changes their names.
+If \f[CR]\-\-force\-rename\f[R] (\f[CR]\-F\f[R]) is specified, the replacement is performed by renaming the file.
+More details: \c
+.UR https://doc.rust-lang.org/std/fs/fn.rename.html
+.UE \c
+\&.
+.SH OPTIONS
+.TP
+\f[CR]\-d, \-\-dry\-run\f[R]
+Do not actually rename files
+.TP
+\f[CR]\-f, \-\-force\-rehash\f[R]
+Process the file even if its name looks like it has already been processed
+.TP
+\f[CR]\-F, \-\-force\-rename\f[R]
+Rename/replace a file even there if another file with the same name exists
+.TP
+\f[CR]\-i, \-\-ignore\-extension\f[R]
+Ignore file extensions when checking and renaming
+.TP
+\f[CR]\-v, \-\-verbose\f[R]
+Explain what is being done
+.TP
+\f[CR]\-h, \-\-help\f[R]
+Print help
+.TP
+\f[CR]\-V, \-\-version\f[R]
+Print version
+.SH EXAMPLES
+Simple example:
+.IP
+.EX
+hashname data.bin
+.EE
+.PP
+Process all files in current directory, remove duplicates:
+.IP
+.EX
+hashname \-f ./*
+.EE
+.SH SEE ALSO
+Project repository: \c
+.UR https://github.com/xxkfqz/hashname
+.UE \c

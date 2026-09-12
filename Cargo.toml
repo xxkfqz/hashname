@@ -1,18 +1,22 @@
 [package]
 name = "hashname"
-version = "0.2.0"
+version = "1.0.1"
 edition = "2021"
+authors = ["xxkfqz <xxkfqz@gmail.com"]
+license-file = "LICENSE"
+repository = "https://github.com/xxkfqz/hashname"
+description = "Utility for renaming files to their SHA256 hash"
 
 [dependencies]
 clap = {
-    version = "4.6.4",
+    version = "4.6.6",
     features = [
         "derive",
         "std",
         "wrap_help"
     ]
 }
-sha2 = "0.11"
+sha2 = "0.11.0"
 base16ct = "1.0.0"
 rayon = "1.12.0"
 

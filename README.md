@@ -11,3 +11,14 @@ dd01352a1c9ba7be8343bc149a8a9f70529349f6147c73648a6ca4941e124f6e.bin
 aeda128839e71ff642eadbeb6dff76829a80284986249840c4cf4235c47fa8ba.bin
 f18a23f874703d435516bdc6267d29ce93d7c2be48a2aaa1a9620600a99f0ae9.bin
 ```
+
+See [documentation](docs/hashname.1.md).
+
+
+## How to build
+
+```bash
+git clone https://github.com/xxkfqz/hashname
+cd hashname
+cargo build --release
+```
